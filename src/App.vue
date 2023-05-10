@@ -55,6 +55,10 @@ export default {
       Tie: "",
     };
   },
+  created() {
+    this.arr = JSON.parse(window.localStorage.getItem("grid"));
+    this.flag = parseInt(window.localStorage.getItem("player"));
+  },
   methods: {
     addValue(row, column) {
       if (this.flag === 1) {
@@ -68,6 +72,8 @@ export default {
       }
       this.whoWon();
       this.matchTie();
+      window.localStorage.setItem("grid", JSON.stringify(this.arr));
+      window.localStorage.setItem("player", this.flag);
     },
 
     whoWon() {
