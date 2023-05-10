@@ -56,8 +56,10 @@ export default {
     };
   },
   created() {
-    this.arr = JSON.parse(window.localStorage.getItem("grid"));
-    this.flag = parseInt(window.localStorage.getItem("player"));
+    if (JSON.parse(window.localStorage.getItem("grid"))) {
+      this.arr = JSON.parse(window.localStorage.getItem("grid"));
+      this.flag = parseInt(window.localStorage.getItem("player"));
+    }
   },
   methods: {
     addValue(row, column) {
