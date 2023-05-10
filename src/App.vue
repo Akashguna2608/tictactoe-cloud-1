@@ -60,6 +60,11 @@ export default {
       this.arr = JSON.parse(window.localStorage.getItem("grid"));
       this.flag = parseInt(window.localStorage.getItem("player"));
     }
+    this.arr = [
+      ["", "", ""],
+      ["", "", ""],
+      ["", "", ""],
+    ];
   },
   methods: {
     addValue(row, column) {
@@ -178,7 +183,8 @@ export default {
       for (var i = 0; i < this.arr.length; i++) {
         for (var j = 0; j < this.arr.length; j++) {
           this.arr[j] = "";
-          window.location.reload();
+          this.flag = 1;
+          window.localStorage.clear();
         }
       }
     },
