@@ -184,7 +184,7 @@ export default {
         for (var j = 0; j < this.arr.length; j++) {
           this.arr[j] = "";
           this.flag = 1;
-          window.localStorage.clear();
+          window.localStorage.clear()
         }
       }
     },
